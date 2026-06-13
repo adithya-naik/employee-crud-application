@@ -18,7 +18,16 @@ public class Employee {
     @Column(name="salary")
     private double salary;
 
+    public Employee() {
 
+    }
+
+    public Employee(int id, String firstName, String lastName, double salary) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary = salary;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -49,12 +58,5 @@ public class Employee {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Employee(int id, String firstName, String lastName, double salary) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.salary = salary;
     }
 }
