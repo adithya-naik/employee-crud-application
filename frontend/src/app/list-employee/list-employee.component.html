@@ -60,69 +60,29 @@
 
           <!-- Table Body -->
           <tbody>
-
-          <tr class="border-t border-gray-100 transition hover:bg-gray-50">
+          <tr
+            *ngFor="let employee of employees"
+            class="border-t border-gray-100 transition hover:bg-gray-50">
 
             <td class="px-8 py-6 font-medium text-gray-800">
-              1
+              {{ employee.id }}
             </td>
 
             <td class="px-8 py-6 text-gray-700">
-              Adithya
+              {{ employee.firstName }}
             </td>
 
             <td class="px-8 py-6 text-gray-700">
-              Naik
+              {{ employee.lastName }}
             </td>
 
             <td class="px-8 py-6 font-semibold text-green-600">
-              ₹50,000
-            </td>
-
-          </tr>
-
-          <tr class="border-t border-gray-100 transition hover:bg-gray-50">
-
-            <td class="px-8 py-6 font-medium text-gray-800">
-              2
-            </td>
-
-            <td class="px-8 py-6 text-gray-700">
-              Rahul
-            </td>
-
-            <td class="px-8 py-6 text-gray-700">
-              Sharma
-            </td>
-
-            <td class="px-8 py-6 font-semibold text-green-600">
-              ₹65,000
-            </td>
-
-          </tr>
-
-          <tr class="border-t border-gray-100 transition hover:bg-gray-50">
-
-            <td class="px-8 py-6 font-medium text-gray-800">
-              3
-            </td>
-
-            <td class="px-8 py-6 text-gray-700">
-              Priya
-            </td>
-
-            <td class="px-8 py-6 text-gray-700">
-              Reddy
-            </td>
-
-            <td class="px-8 py-6 font-semibold text-green-600">
-              ₹72,000
+              ₹{{ employee.salary }}
             </td>
 
           </tr>
 
           </tbody>
-
         </table>
 
       </div>
