@@ -67,11 +67,12 @@
 
           </thead>
 
-          <!-- Table Body -->
           <tbody>
+
           <tr
             *ngFor="let employee of filteredEmployees"
-            class="border-t border-gray-100 transition hover:bg-gray-50">
+            class="border-t border-gray-100 transition hover:bg-gray-50"
+          >
 
             <td class="px-8 py-6 font-medium text-gray-800">
               {{ employee.id }}
@@ -87,6 +88,17 @@
 
             <td class="px-8 py-6 font-semibold text-green-600">
               ₹{{ employee.salary }}
+            </td>
+
+            <td class="px-8 py-6">
+
+              <button
+                (click)="deleteEmployee(employee.id!)"
+                class="px-4 py-2 rounded-xl bg-red-500 text-white hover:bg-red-600 transition"
+              >
+                Delete
+              </button>
+
             </td>
 
           </tr>

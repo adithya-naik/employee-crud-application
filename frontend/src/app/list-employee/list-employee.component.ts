@@ -28,14 +28,17 @@ export class ListEmployeeComponent {
   }
 
   searchEmployee() {
-
     this.filteredEmployees = this.employees.filter(employee =>
-
       employee.firstName.toLowerCase().includes(this.searchText.toLowerCase()) ||
-
       employee.lastName.toLowerCase().includes(this.searchText.toLowerCase())
-
     );
+  }
+
+  deleteEmployee(id: number) {
+    this.employeeService.deleteEmployee(id).subscribe(data => {
+      console.log(data);
+      this.getEmployee();
+    });
 
   }
 
