@@ -58,4 +58,8 @@ export class UpdateEmployeeComponent {
       });
   }
 
+  goToList() {
+    this.router.navigate(['/employees']);
+  }
+
 }
