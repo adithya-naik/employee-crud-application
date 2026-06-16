@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 
@@ -21,7 +21,8 @@ export class UpdateEmployeeComponent {
 
   constructor(
     private employeeService: EmployeeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -41,17 +42,20 @@ export class UpdateEmployeeComponent {
   }
 
   updateEmployee() {
-
     this.employeeService
       .updateEmployee(this.id, this.employee)
-      .subscribe(data => {
+      .subscribe({
+        next: (data) => {
+          console.log(data);
 
-        console.log(data);
-
-        alert('Employee Updated Successfully');
-
+          alert('Employee Updated Successfully');
+          this.router.navigate(['/employees']);
+        },
+        error: (err) => {
+          console.error(err);
+          alert('Update failed');
+        }
       });
-
   }
 
 }
