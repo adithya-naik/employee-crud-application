@@ -39,163 +39,101 @@ A full-stack Employee Management System built using Angular, Spring Boot, and My
 
 ```text
 employee-crud-application/
-├─ .idea/
-│  ├─ compiler.xml
-│  ├─ encodings.xml
-│  ├─ jarRepositories.xml
-│  ├─ misc.xml
-│  ├─ vcs.xml
-│  └─ workspace.xml
-├─ backend/
-│  ├─ .idea/
-│  │  ├─ .gitignore
-│  │  ├─ compiler.xml
-│  │  ├─ encodings.xml
-│  │  ├─ jarRepositories.xml
-│  │  ├─ misc.xml
-│  │  ├─ vcs.xml
-│  │  └─ workspace.xml
-│  ├─ .mvn/
-│  │  └─ wrapper/
-│  │     └─ maven-wrapper.properties
-│  ├─ src/
-│  │  ├─ main/
-│  │  │  ├─ java/
-│  │  │  │  └─ com/
-│  │  │  │     └─ adithya_naik/
-│  │  │  │        └─ employee_crud_application/
-│  │  │  │           ├─ controller/
-│  │  │  │           │  └─ EmployeeController.java
-│  │  │  │           ├─ entity/
-│  │  │  │           │  └─ Employee.java
-│  │  │  │           ├─ repository/
-│  │  │  │           │  └─ EmployeeRepository.java
-│  │  │  │           └─ EmployeeCrudApplication.java
-│  │  │  └─ resources/
-│  │  │     ├─ static/
-│  │  │     ├─ templates/
-│  │  │     └─ application.properties
-│  │  └─ test/
-│  │     └─ java/
-│  │        └─ com/
-│  │           └─ adithya_naik/
-│  │              └─ employee_crud_application/
-│  │                 └─ EmployeeCrudApplicationTests.java
-│  ├─ target/
-│  │  ├─ classes/
-│  │  │  ├─ com/
-│  │  │  │  └─ adithya_naik/
-│  │  │  │     └─ employee_crud_application/
-│  │  │  │        ├─ controller/
-│  │  │  │        │  └─ EmployeeController.class
-│  │  │  │        ├─ entity/
-│  │  │  │        │  └─ Employee.class
-│  │  │  │        ├─ repository/
-│  │  │  │        │  └─ EmployeeRepository.class
-│  │  │  │        └─ EmployeeCrudApplication.class
-│  │  │  └─ application.properties
-│  │  └─ generated-sources/
-│  │     └─ annotations/
-│  ├─ .gitattributes
-│  ├─ .gitignore
-│  ├─ HELP.md
-│  ├─ mvnw
-│  ├─ mvnw.cmd
-│  ├─ pom.xml
-│  └─ README.md
-├─ frontend/
-│  ├─ .angular/
-│  │  └─ cache/
-│  │     └─ 19.2.27/
-│  │        └─ frontend/
-│  │           ├─ vite/
-│  │           │  ├─ deps/
-│  │           │  │  ├─ _metadata.json
-│  │           │  │  ├─ @angular_common_http.js
-│  │           │  │  ├─ @angular_common_http.js.map
-│  │           │  │  ├─ @angular_common.js
-│  │           │  │  ├─ @angular_common.js.map
-│  │           │  │  ├─ @angular_core.js
-│  │           │  │  ├─ @angular_core.js.map
-│  │           │  │  ├─ @angular_forms.js
-│  │           │  │  ├─ @angular_forms.js.map
-│  │           │  │  ├─ @angular_platform-browser.js
-│  │           │  │  ├─ @angular_platform-browser.js.map
-│  │           │  │  ├─ @angular_router.js
-│  │           │  │  ├─ @angular_router.js.map
-│  │           │  │  ├─ chunk-3ZEMIUMS.js
-│  │           │  │  ├─ chunk-3ZEMIUMS.js.map
-│  │           │  │  ├─ chunk-5NUURRAO.js
-│  │           │  │  ├─ chunk-5NUURRAO.js.map
-│  │           │  │  ├─ chunk-J4XDVQTK.js
-│  │           │  │  ├─ chunk-J4XDVQTK.js.map
-│  │           │  │  ├─ chunk-NI5NM45N.js
-│  │           │  │  ├─ chunk-NI5NM45N.js.map
-│  │           │  │  ├─ chunk-QRA64KSI.js
-│  │           │  │  ├─ chunk-QRA64KSI.js.map
-│  │           │  │  └─ package.json
-│  │           │  └─ deps_ssr/
-│  │           │     ├─ _metadata.json
-│  │           │     └─ package.json
-│  │           └─ .tsbuildinfo
-│  ├─ .vscode/
-│  │  ├─ extensions.json
-│  │  ├─ launch.json
-│  │  └─ tasks.json
-│  ├─ public/
-│  │  └─ favicon.ico
-│  ├─ src/
-│  │  ├─ app/
-│  │  │  ├─ create-employee/
-│  │  │  │  ├─ create-employee.component.css
-│  │  │  │  ├─ create-employee.component.html
-│  │  │  │  ├─ create-employee.component.spec.ts
-│  │  │  │  └─ create-employee.component.ts
-│  │  │  ├─ footer/
-│  │  │  │  ├─ footer.component.css
-│  │  │  │  ├─ footer.component.html
-│  │  │  │  ├─ footer.component.spec.ts
-│  │  │  │  └─ footer.component.ts
-│  │  │  ├─ header/
-│  │  │  │  ├─ header.component.css
-│  │  │  │  ├─ header.component.html
-│  │  │  │  ├─ header.component.spec.ts
-│  │  │  │  └─ header.component.ts
-│  │  │  ├─ list-employee/
-│  │  │  │  ├─ list-employee.component.css
-│  │  │  │  ├─ list-employee.component.html
-│  │  │  │  ├─ list-employee.component.spec.ts
-│  │  │  │  └─ list-employee.component.ts
-│  │  │  ├─ update-employee/
-│  │  │  │  ├─ update-employee.component.css
-│  │  │  │  ├─ update-employee.component.html
-│  │  │  │  ├─ update-employee.component.spec.ts
-│  │  │  │  └─ update-employee.component.ts
-│  │  │  ├─ app.component.css
-│  │  │  ├─ app.component.html
-│  │  │  ├─ app.component.spec.ts
-│  │  │  ├─ app.component.ts
-│  │  │  ├─ app.config.ts
-│  │  │  ├─ app.routes.ts
-│  │  │  ├─ employee.service.spec.ts
-│  │  │  ├─ employee.service.ts
-│  │  │  ├─ employee.spec.ts
-│  │  │  └─ employee.ts
-│  │  ├─ index.html
-│  │  ├─ main.ts
-│  │  └─ styles.css
-│  ├─ .editorconfig
-│  ├─ .gitignore
-│  ├─ .postcssrc.json
-│  ├─ angular.json
-│  ├─ package-lock.json
-│  ├─ package.json
-│  ├─ README.md
-│  ├─ tsconfig.app.json
-│  ├─ tsconfig.json
-│  └─ tsconfig.spec.json
-├─ .gitignore
-└─ README.md
+│
+├── backend/
+│   │
+│   ├── .mvn/
+│   │   └── wrapper/
+│   │       └── maven-wrapper.properties
+│   │
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── adithya_naik/
+│   │   │   │           └── employee_crud_application/
+│   │   │   │               ├── controller/
+│   │   │   │               │   └── EmployeeController.java
+│   │   │   │               ├── entity/
+│   │   │   │               │   └── Employee.java
+│   │   │   │               ├── repository/
+│   │   │   │               │   └── EmployeeRepository.java
+│   │   │   │               └── EmployeeCrudApplication.java
+│   │   │   │
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   │
+│   │   └── test/
+│   │       └── java/
+│   │
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── README.md
+│
+├── frontend/
+│   │
+│   ├── public/
+│   │   └── favicon.ico
+│   │
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── create-employee/
+│   │   │   │   ├── create-employee.component.css
+│   │   │   │   ├── create-employee.component.html
+│   │   │   │   └── create-employee.component.ts
+│   │   │   │
+│   │   │   ├── update-employee/
+│   │   │   │   ├── update-employee.component.css
+│   │   │   │   ├── update-employee.component.html
+│   │   │   │   └── update-employee.component.ts
+│   │   │   │
+│   │   │   ├── list-employee/
+│   │   │   │   ├── list-employee.component.css
+│   │   │   │   ├── list-employee.component.html
+│   │   │   │   └── list-employee.component.ts
+│   │   │   │
+│   │   │   ├── header/
+│   │   │   │   ├── header.component.css
+│   │   │   │   ├── header.component.html
+│   │   │   │   └── header.component.ts
+│   │   │   │
+│   │   │   ├── footer/
+│   │   │   │   ├── footer.component.css
+│   │   │   │   ├── footer.component.html
+│   │   │   │   └── footer.component.ts
+│   │   │   │
+│   │   │   ├── app.component.css
+│   │   │   ├── app.component.html
+│   │   │   ├── app.component.ts
+│   │   │   ├── app.config.ts
+│   │   │   ├── app.routes.ts
+│   │   │   ├── employee.service.ts
+│   │   │   └── employee.ts
+│   │   │
+│   │   ├── index.html
+│   │   ├── main.ts
+│   │   └── styles.css
+│   │
+│   ├── .editorconfig
+│   ├── .gitignore
+│   ├── .postcssrc.json
+│   ├── angular.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── tsconfig.json
+│   ├── tsconfig.app.json
+│   ├── tsconfig.spec.json
+│   └── README.md
+│
+├── .gitignore
+├── README.md
+└── screenshots/
+    ├── employee-list.png
+    ├── add-employee.png
+    └── update-employee.png
 
 ```
 
