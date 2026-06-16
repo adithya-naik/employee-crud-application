@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import {EmployeeService} from '../employee.service';
 import {Employee} from '../employee';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-list-employee',
-  imports: [CommonModule,FormsModule],
+  imports: [RouterLink,CommonModule,FormsModule],
   templateUrl: './list-employee.component.html',
   styleUrl: './list-employee.component.css'
 })

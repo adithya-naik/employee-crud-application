@@ -8,26 +8,29 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin (origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class EmployeeController {
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
     @GetMapping("/employees")
-    public List<Employee> getAllEmployee(){
+    public List<Employee> getAllEmployee() {
         return employeeRepository.findAll();
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody Employee employee){
+    public Employee createEmployee(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
 
     @DeleteMapping("/employees/{id}")
-    public String deleteEmployee(@PathVariable Integer id){
+    public String deleteEmployee(@PathVariable Integer id) {
         employeeRepository.deleteById(id);
         return "Employee deleted successfully";
+    }
+
     @GetMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(
             @PathVariable Integer id) {
@@ -57,5 +60,4 @@ public class EmployeeController {
 
         return ResponseEntity.ok(updatedEmployee);
     }
-
 }

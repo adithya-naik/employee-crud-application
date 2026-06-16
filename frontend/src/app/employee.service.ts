@@ -10,18 +10,12 @@ export class EmployeeService {
 
   private baseURL = "http://localhost:8080/employees";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getEmployeesList(): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(this.baseURL);
   }
-  getEmployeeById(id: number): Observable<Employee> {
-    return this.httpClient.get<Employee>(
-      `${this.baseURL}/${id}`
-    );
-  }
 
-<<<<<<< HEAD
   createEmployee(employee: Employee): Observable<Employee> {
     return this.httpClient.post<Employee>(this.baseURL, employee);
   }
@@ -30,17 +24,14 @@ export class EmployeeService {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
-=======
-  updateEmployee(
-    id: number,
-    employee: Employee
-  ): Observable<Employee> {
+  getEmployeeById(id: number): Observable<Employee> {
+    return this.httpClient.get<Employee>(`${this.baseURL}/${id}`);
+  }
 
+  updateEmployee(id: number, employee: Employee): Observable<Employee> {
     return this.httpClient.put<Employee>(
       `${this.baseURL}/${id}`,
       employee
     );
-
   }
->>>>>>> feature/update-employee
 }
