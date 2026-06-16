@@ -36,11 +36,18 @@ export class ListEmployeeComponent {
   }
 
   deleteEmployee(id: number) {
-    this.employeeService.deleteEmployee(id).subscribe(data => {
-      console.log(data);
-      this.getEmployee();
-    });
+    this.employeeService.deleteEmployee(id).subscribe({
+      next: (res) => {
+        console.log("SUCCESS", res);
 
+        this.filteredEmployees = this.filteredEmployees.filter(
+          emp => emp.id !== id
+        );
+      },
+      error: (err) => {
+        console.log("ERROR", err);
+      }
+    });
   }
 
 }
