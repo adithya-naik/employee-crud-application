@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../employee'
 import { EmployeeService } from '../employee.service';
-import { Router } from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { Router,RouterModule } from '@angular/router';
 @Component({
   selector: 'app-create-employee',
   imports: [FormsModule,RouterModule],
@@ -16,7 +15,14 @@ export class CreateEmployeeComponent {
   constructor(private employeeService: EmployeeService,private router: Router) {}
 
   saveEmployee() {
-
+    if (
+      !this.employee.firstName ||
+      !this.employee.lastName ||
+      !this.employee.salary
+    ) {
+      alert('Please fill all fields');
+      return;
+    }
     this.employeeService.createEmployee(this.employee)
       .subscribe({
         next: (data) => {
