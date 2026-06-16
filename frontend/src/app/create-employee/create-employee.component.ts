@@ -3,9 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { Employee } from '../employee'
 import { EmployeeService } from '../employee.service';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-create-employee',
-  imports: [FormsModule],
+  imports: [FormsModule,RouterModule],
   templateUrl: './create-employee.component.html',
   styleUrl: './create-employee.component.css'
 })
