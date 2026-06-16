@@ -4,9 +4,8 @@ package com.adithya_naik.employee_crud_application.controller;
 import com.adithya_naik.employee_crud_application.entity.Employee;
 import com.adithya_naik.employee_crud_application.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +18,36 @@ public class EmployeeController {
     @GetMapping("/employees")
     public List<Employee> getAllEmployee(){
         return employeeRepository.findAll();
+    }
+
+    @GetMapping("/employees/{id}")
+    public ResponseEntity<Employee> getEmployeeById(
+            @PathVariable Integer id) {
+
+        Employee employee = employeeRepository
+                .findById(id)
+                .orElseThrow();
+
+        return ResponseEntity.ok(employee);
+    }
+
+    @PutMapping("/employees/{id}")
+    public ResponseEntity<Employee> updateEmployee(
+            @PathVariable Integer id,
+            @RequestBody Employee employeeDetails) {
+
+        Employee employee = employeeRepository
+                .findById(id)
+                .orElseThrow();
+
+        employee.setFirstName(employeeDetails.getFirstName());
+        employee.setLastName(employeeDetails.getLastName());
+        employee.setSalary(employeeDetails.getSalary());
+
+        Employee updatedEmployee =
+                employeeRepository.save(employee);
+
+        return ResponseEntity.ok(updatedEmployee);
     }
 
 }

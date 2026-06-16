@@ -89,6 +89,13 @@
               ₹{{ employee.salary }}
             </td>
 
+            <td>
+              <button
+                [routerLink]="['/update-employee', employee.id]"
+              >
+                Update
+              </button>
+            </td>
           </tr>
 
           </tbody>
