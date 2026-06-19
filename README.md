@@ -207,13 +207,32 @@ INSERT INTO employees (first_name, last_name, salary) VALUES
 ```
 
 ## Screenshots
-### Employee List
-![alt text](image.png)
+### Read Employee / Dashboard
+![alt text](Screenshorts/emp-dashboard.png)
 ### Add Employee
-![alt text](image-2.png)
+![alt text](Screenshorts/add-emp.png)
+### Employee Created Successfully
+![alt text](Screenshorts/create-success.png)
+### Search Employee
+![alt text](Screenshorts/search-emp.png)
 ### Update Employee
-![alt text](image-1.png)
-
+![alt text](Screenshorts/update-emp.png)
+### Update Employee Successfully
+![alt text](Screenshorts/update-success.png)
+### Delete Employee
+![alt text](Screenshorts/delete-emp.png)
+### Delete Employee Successfully
+![alt text](Screenshorts/delete-success.png)
+### GET Employee
+![alt text](Screenshorts/get-employee.png)
+### GET Employee by ID
+![alt text](Screenshorts/get-employee-by-id.png)
+### POST Employee
+![alt text](Screenshorts/post-employee.png)
+### PUT Employee
+![alt text](Screenshorts/put-employee.png)
+### DELETE Employee
+![alt text](Screenshorts/delete-employee.png)
 
 ## Future Improvements
 * Pagination
